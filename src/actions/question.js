@@ -25,7 +25,7 @@ export const fetchQuestionsError = error => {
 
 export const fetchQuestions = () => dispatch => {
   dispatch(fetchQuestionsRequest());
-  fetch(`${API_BASE_URL}/api/questions`)
+  fetch(`${API_BASE_URL}/questions`)
     .then(res => res.json())
     .then(res => dispatch(fetchQuestionsSuccess(res)))
     .catch(err => dispatch(fetchQuestionsError(err)));
