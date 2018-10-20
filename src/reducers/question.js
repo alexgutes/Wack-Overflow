@@ -1,7 +1,10 @@
 import {
   FETCH_QUESTIONS_REQUEST,
   FETCH_QUESTIONS_ERROR,
-  FETCH_QUESTIONS_SUCCESS
+  FETCH_QUESTIONS_SUCCESS,
+  POST_QUESTION_REQUEST,
+  POST_QUESTION_SUCCESS,
+  POST_QUESTION_ERROR
 } from '../actions/question';
 
 const initialState = {
@@ -23,6 +26,23 @@ export default (state = initialState, action) => {
       });
 
     case FETCH_QUESTIONS_ERROR:
+      return Object.assign({}, state, {
+        loading: false,
+        error: action.error
+      });
+
+    case POST_QUESTION_REQUEST:
+      return Object.assign({}, state, { loading: true });
+
+    case POST_QUESTION_SUCCESS:
+      return Object.assign({}, state, {
+        loading: false,
+        error: null,
+        // ??
+        question: [...state, action.newQuestion]
+      });
+
+    case POST_QUESTION_ERROR:
       return Object.assign({}, state, {
         loading: false,
         error: action.error

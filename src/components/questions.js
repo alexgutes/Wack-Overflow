@@ -8,12 +8,17 @@ export class Questions extends Component {
   }
 
   render() {
-    return <ul className='questions'>{this.props.questions}</ul>;
+    return (
+      <div className="main-content">
+        <h1>Top Questions</h1>
+        <ul>{this.props.questions}</ul>
+      </div>
+    );
   }
 }
 
 const mapStateToProps = state => {
-  const questionList = state.questions.map((question, index) => {
+  const questionList = state.questions.questions.map((question, index) => {
     return (
       <li key={index}>
         <h3>{question.title}</h3>
