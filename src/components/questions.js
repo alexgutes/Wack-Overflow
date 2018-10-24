@@ -11,7 +11,7 @@ export class Questions extends Component {
 
   render() {
     return (
-      <div className="container">
+      <section className="container">
         <br />
         <div className="row">
           <div className="two-thirds column">
@@ -25,12 +25,11 @@ export class Questions extends Component {
             </Link>
           </div>
         </div>
-        <div className="row">
-          <div className="two-thirds column">
-            <ul>{this.props.questions.reverse()}</ul>
-          </div>
+        <div className="question-list">
+          <hr />
+          <ul>{this.props.questions.reverse()}</ul>
         </div>
-      </div>
+      </section>
     );
   }
 }
@@ -39,12 +38,21 @@ const mapStateToProps = state => {
   const questionList = state.questions.questions.map((question, index) => {
     return (
       <li key={index}>
-        <h3>{question.title}</h3>
+        <div className="row">
+          <h3>{question.title}</h3>
+        </div>
         <p>{question.content}</p>
-        <p>
-          Asked by...
-          {question.userId.username}
-        </p>
+        <div className="row asked-by">
+          <p>
+            <span id="asked">
+              {question.createdAt.toLocaleString('en-us', {
+                minute: '2-digit'
+              })}
+            </span>
+            <a href="#"> {question.userId.username}</a>
+          </p>
+        </div>
+        <hr />
       </li>
     );
   });

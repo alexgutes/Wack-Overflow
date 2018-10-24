@@ -1,0 +1,11 @@
+.container.login-form-container {
+  max-width: 330px;
+  align-items: center;
+}
+
+.login-form-container {
+  padding-top: 100px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}

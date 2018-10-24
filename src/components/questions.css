@@ -1,12 +1,24 @@
-.top-questions {
-  box-sizing: border-box;
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  
+.question-list {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-#ask {
-  justify-content: right;
-  display: flex;
+.one-third-column {
+  text-align: right;
+}
+
+li {
+  list-style: none;
+}
+
+.asked-by {
+  text-align: right;
+}
+
+#asked {
+  color: #9199a1;
+}
+
+a {
+  text-decoration: none;
 }
