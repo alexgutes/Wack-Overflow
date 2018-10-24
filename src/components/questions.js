@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchQuestions } from '../actions/question';
+import { Link } from 'react-router-dom';
+import './questions.css';
 
 export class Questions extends Component {
   componentDidMount() {
@@ -9,9 +11,25 @@ export class Questions extends Component {
 
   render() {
     return (
-      <div className="main-content">
-        <h1>Top Questions</h1>
-        <ul>{this.props.questions}</ul>
+      <div className="container">
+        <br />
+        <div className="row">
+          <div className="two-thirds column">
+            <h1 id="questions-header">Top Questions</h1>
+          </div>
+          <div className="one-third-column">
+            <Link to="/ask">
+              <button className="button-primary" id="ask">
+                Ask
+              </button>
+            </Link>
+          </div>
+        </div>
+        <div className="row">
+          <div className="two-thirds column">
+            <ul>{this.props.questions.reverse()}</ul>
+          </div>
+        </div>
       </div>
     );
   }
@@ -22,8 +40,11 @@ const mapStateToProps = state => {
     return (
       <li key={index}>
         <h3>{question.title}</h3>
-        <p>{question.body}</p>
-        <hr />
+        <p>{question.content}</p>
+        <p>
+          Asked by...
+          {question.userId.username}
+        </p>
       </li>
     );
   });

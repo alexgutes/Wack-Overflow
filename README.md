@@ -29,3 +29,10 @@
 
 - login
 - sign up
+
+if current user logged in show logout button
+else show Log In and Sign up buttons
+
+ask questions pages
+if logged in show ask question form
+else show log in and/or register form

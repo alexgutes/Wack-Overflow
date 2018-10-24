@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { clearAuth } from '../actions/auth';
+import './header.css';
 
 export function Header(props) {
   let show;
@@ -16,26 +17,44 @@ export function Header(props) {
         >
           Logout
         </button>
-        <Link to="/ask">Ask</Link>
       </React.Fragment>
     );
   } else {
     show = (
       //add listner to sign up
       <React.Fragment>
-        <button>Sign Up</button>
+        <Link className="top-btn" to="/login">
+          <button>Log In</button>
+        </Link>
+        <Link to="/register">
+          <button className="top-btn button-primary">Sign Up</button>
+        </Link>
       </React.Fragment>
     );
   }
   return (
-    <header>
-      <h1>Wack Overflow</h1>
-      <input type="text" placeholder="...search" />
-      <Link to="/">Home</Link>
-      <Link to="/questions">Questions</Link>
+    <header className="main-header">
+      <div className="container">
+        <div className="row">
+          <div className="two columns">
+            <Link id="home-link" to="/">
+              <span id="header-logo">
+                wack
+                <b>overflow</b>
+              </span>
+            </Link>
+          </div>
 
-      {show}
-      <hr />
+          {/* <form className="search six columns">
+            <input type="search" placeholder="...search" />
+            <button className="button-primary" type="submit">
+              <i className="fas fa-search" />
+            </button>
+          </form> */}
+
+          <div className="four columns">{show}</div>
+        </div>
+      </div>
     </header>
   );
 }

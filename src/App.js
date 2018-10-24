@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import { connect } from 'react-redux';
 
 import './App.css';
+import './css/skeleton.css';
 import Header from './components/header';
 import AskQuestion from './components/ask-question';
 import Questions from './components/questions';
@@ -11,6 +12,7 @@ import RegistrationForm from './components/registration-form';
 import { refreshAuthToken } from './actions/auth';
 import Home from './components/home';
 import { Route, withRouter } from 'react-router-dom';
+import LoginPage from './components/login-page';
 
 export class App extends React.Component {
   componentDidUpdate(prevProps) {
@@ -45,9 +47,13 @@ export class App extends React.Component {
     return (
       <div className="App">
         <Header />
-        <Route exact path="/" component={Home} />
-        <Route exact path="/ask" component={AskQuestion} />
-        <Route exact path="/questions" component={Questions} />
+        <main>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/ask" component={AskQuestion} />
+          <Route exact path="/questions" component={Questions} />
+          <Route exact path="/login" component={LoginPage} />
+          <Route exact path="/register" component={RegistrationForm} />
+        </main>
       </div>
     );
   }

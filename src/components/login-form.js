@@ -3,8 +3,10 @@ import { Field, reduxForm, focus } from 'redux-form';
 import Input from './input';
 import { login } from '../actions/auth';
 import { required, nonEmpty } from '../validators';
+import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-export class LoginForm extends React.Component {
+class LoginForm extends React.Component {
   onSubmit(values) {
     return this.props.dispatch(login(values.username, values.password));
   }
@@ -18,41 +20,62 @@ export class LoginForm extends React.Component {
         </div>
       );
     }
+
+    if (this.props.currentUser) {
+      return <Redirect to="/" />;
+    }
     return (
-      <div>
-        <h1>Login</h1>
-        <form
-          className="login-form"
-          onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
-        >
-          {error}
-          <label htmlFor="username">Username</label>
-          <Field
-            component={Input}
-            type="text"
-            name="username"
-            id="username"
-            validate={[required, nonEmpty]}
-          />
-          <label htmlFor="password">Password</label>
-          <Field
-            component={Input}
-            type="password"
-            name="password"
-            id="password"
-            validate={[required, nonEmpty]}
-          />
-          <button disabled={this.props.pristine || this.props.submitting}>
-            Log in
-          </button>
-        </form>
-        <hr />
+      <div className="container">
+        <div className="row">
+          <h1>Login</h1>
+        </div>
+        <div className="row">
+          <div className="two-thirds column">
+            <form
+              className="login-form"
+              onSubmit={this.props.handleSubmit(values => {
+                return this.onSubmit(values);
+                // window.location = '/';
+              })}
+            >
+              {error}
+              <label htmlFor="username">Username</label>
+              <Field
+                component={Input}
+                type="text"
+                name="username"
+                id="username"
+                validate={[required, nonEmpty]}
+              />
+              <label htmlFor="password">Password</label>
+              <Field
+                component={Input}
+                type="password"
+                name="password"
+                id="password"
+                validate={[required, nonEmpty]}
+              />
+              <button
+                className="button-primary"
+                disabled={this.props.pristine || this.props.submitting}
+              >
+                Log in
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
     );
   }
 }
 
+const LoginFormConnected = connect(state => {
+  return {
+    currentUser: state.auth.currentUser
+  };
+})(LoginForm);
+
 export default reduxForm({
   form: 'login',
   onSubmitFail: (errors, dispatch) => dispatch(focus('login', 'username'))
-})(LoginForm);
+})(LoginFormConnected);
