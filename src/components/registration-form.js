@@ -26,7 +26,7 @@ export class RegistrationForm extends React.Component {
     }
 
     return (
-      <div className="row landing">
+      <div className="landing">
         <div className="container">
           <div className="one-half column ">
             <h1>Create your account</h1>

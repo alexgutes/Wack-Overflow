@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { fetchQuestions } from '../actions/question';
 import { Link } from 'react-router-dom';
 import './questions.css';
+import moment from 'moment';
 
 export class Questions extends Component {
   componentDidMount() {
@@ -44,11 +45,7 @@ const mapStateToProps = state => {
         <p>{question.content}</p>
         <div className="row asked-by">
           <p>
-            <span id="asked">
-              {question.createdAt.toLocaleString('en-us', {
-                minute: '2-digit'
-              })}
-            </span>
+            <span id="asked">asked {moment(question.createdAt).fromNow()}</span>
             <a href="#"> {question.userId.username}</a>
           </p>
         </div>

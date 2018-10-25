@@ -8,7 +8,7 @@ export function Header(props) {
   let show;
   if (props.currentUser) {
     show = (
-      <React.Fragment>
+      <li>
         <button
           onClick={e => {
             props.dispatch(clearAuth());
@@ -17,43 +17,39 @@ export function Header(props) {
         >
           Logout
         </button>
-      </React.Fragment>
+      </li>
     );
   } else {
     show = (
       //add listner to sign up
       <React.Fragment>
-        <Link className="top-btn" to="/login">
-          <button>Log In</button>
-        </Link>
-        <Link to="/register">
-          <button className="top-btn button-primary">Sign Up</button>
-        </Link>
+        <li>
+          <Link className="top-btn" to="/login">
+            <button>Log In</button>
+          </Link>
+        </li>
+        <li>
+          <Link to="/register">
+            <button className="top-btn button-primary">Sign Up</button>
+          </Link>
+        </li>
       </React.Fragment>
     );
   }
   return (
     <header className="main-header">
       <div className="container">
-        <div className="row">
-          <div className="two columns">
+        <ul className="header">
+          <li className="logo">
             <Link id="home-link" to="/">
               <span id="header-logo">
                 wack
                 <b>overflow</b>
               </span>
             </Link>
-          </div>
-
-          {/* <form className="search six columns">
-            <input type="search" placeholder="...search" />
-            <button className="button-primary" type="submit">
-              <i className="fas fa-search" />
-            </button>
-          </form> */}
-
-          <div className="four columns">{show}</div>
-        </div>
+          </li>
+          {show}
+        </ul>
       </div>
     </header>
   );
