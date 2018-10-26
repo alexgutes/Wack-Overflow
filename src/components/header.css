@@ -3,11 +3,13 @@
   height: 50px;
   background-color: #fafafb;
   border-top: 3px solid #f48024;
+  box-shadow: 0 1px 0 rgba(12, 13, 14, 0.1), 0 1px 6px rgba(59, 64, 69, 0.1);
 }
 
 .header {
   display: flex;
   align-items: center;
+  max-height: 50px;
 }
 
 .logo {

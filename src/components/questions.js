@@ -12,25 +12,24 @@ export class Questions extends Component {
 
   render() {
     return (
-      <section className="container">
-        <br />
-        <div className="row">
-          <div className="two-thirds column">
-            <h1 id="questions-header">Top Questions</h1>
-          </div>
-          <div className="one-third-column">
-            <Link to="/ask">
+      <div className="container">
+        <ul className="flex-header">
+          <li className="heading">
+            <h5 id="questions-header">Top Questions</h5>
+          </li>
+          <li>
+            <Link className="u-pull-right" id="ask-button" to="/ask">
               <button className="button-primary" id="ask">
                 Ask
               </button>
             </Link>
-          </div>
-        </div>
+          </li>
+        </ul>
+
         <div className="question-list">
-          <hr />
           <ul>{this.props.questions.reverse()}</ul>
         </div>
-      </section>
+      </div>
     );
   }
 }
@@ -38,18 +37,17 @@ export class Questions extends Component {
 const mapStateToProps = state => {
   const questionList = state.questions.questions.map((question, index) => {
     return (
-      <li key={index}>
+      <li key={index} className="question">
         <div className="row">
-          <h3>{question.title}</h3>
+          <h5>{question.title}</h5>
         </div>
         <p>{question.content}</p>
         <div className="row asked-by">
           <p>
             <span id="asked">asked {moment(question.createdAt).fromNow()}</span>
-            <a href="#"> {question.userId.username}</a>
+            <span className="link-color"> {question.userId.username}</span>
           </p>
         </div>
-        <hr />
       </li>
     );
   });

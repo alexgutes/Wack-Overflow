@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import LoginForm from './login-form';
 import RegistrationForm from './registration-form';
 import { connect } from 'react-redux';
-import { AskQuestion } from './ask-question';
 import Questions from '../components/questions';
 
 class Home extends Component {

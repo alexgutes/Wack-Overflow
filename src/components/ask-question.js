@@ -1,8 +1,8 @@
 import { reduxForm, Field } from 'redux-form';
-import { API_BASE_URL } from '../config';
 import { postQuestion, fetchQuestions } from '../actions/question';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
+import './ask-question.css';
 
 import React from 'react';
 
@@ -10,7 +10,6 @@ import React from 'react';
 export class AskQuestion extends React.Component {
   onSubmit(values) {
     // pass values and token?
-    console.log(values);
     return this.props
       .dispatch(postQuestion(values.title, values.body))
       .then(() => this.props.dispatch(fetchQuestions()));
@@ -24,39 +23,47 @@ export class AskQuestion extends React.Component {
 
     return (
       <div className="container">
-        <div className="row">
-          <div>
-            <h1>Ask A Question</h1>
-          </div>
-          <div>
-            <form
-              onSubmit={this.props.handleSubmit(values => {
-                this.onSubmit(values);
-                window.location = '/';
-              })}
-            >
-              <label>Title</label>
-              <Field
-                className="u-full-width"
-                name="title"
-                id="title"
-                type="text"
-                component="input"
-                label="title"
-              />
-              <label>Content</label>
-              <Field
-                className="u-full-width"
-                name="body"
-                id="body"
-                type="text"
-                component="textarea"
-                label="body"
-              />
-              <button className="button-primary" type="submit">
-                Ask Question
-              </button>
-            </form>
+        <div className="two-thirds column">
+          <h5>Ask A Question</h5>
+          <form
+            onSubmit={this.props.handleSubmit(values => {
+              this.onSubmit(values);
+              window.location = '/';
+            })}
+          >
+            <label>Title</label>
+            <Field
+              className="u-full-width"
+              name="title"
+              id="title"
+              type="text"
+              component="input"
+              label="title"
+            />
+            <label>Content</label>
+            <Field
+              className="u-full-width"
+              name="body"
+              id="body"
+              type="text"
+              component="textarea"
+              label="body"
+            />
+            <button className="button-primary" type="submit">
+              Ask Question
+            </button>
+          </form>
+        </div>
+        <div className="one-third column">
+          <div className="u-full-width border">
+            <h5>How To Ask</h5>
+            <p>
+              <b>Is your question about programming?</b>
+              <p>
+                We prefer questions that can be answered, not just discussed.
+              </p>
+              <p>Provide details. Share your research.</p>
+            </p>
           </div>
         </div>
       </div>

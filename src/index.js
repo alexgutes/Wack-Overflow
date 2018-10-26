@@ -3,14 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import Questions from './components/questions';
-import Header from './components/header';
-import { createStore, applyMiddleware, combineReducers } from 'redux';
-import thunk from 'redux-thunk';
-import questionReducer from './reducers/question';
 import { Provider } from 'react-redux';
 import store from './store';
-import AskQuestion from './components/ask-question';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 // import { reducer as formReducer } from 'redux-form';

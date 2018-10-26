@@ -11,14 +11,36 @@ li {
   list-style: none;
 }
 
+#asked {
+  color: #9199a1;
+}
 .asked-by {
   text-align: right;
 }
 
-#asked {
-  color: #9199a1;
-}
-
 a {
   text-decoration: none;
+}
+
+.link-color {
+  color: #07c;
+}
+.link-color:hover {
+  color: #3af;
+}
+
+.flex-header {
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  border-bottom: 1px solid #eff0f1;
+}
+
+.heading {
+  margin-right: auto;
+}
+
+.question {
+  border-bottom: 1px solid #eff0f1;
 }

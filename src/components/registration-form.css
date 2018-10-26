@@ -1,9 +1,13 @@
 .landing {
   background-image: linear-gradient(to right, #126cfa 0%, #108aec 100%);
   color: #fff;
-  padding-top: 22px;
+  padding: 30px;
 }
 
 #border {
   border-color: #fff;
+}
+
+.center {
+  padding-top: 120px;
 }

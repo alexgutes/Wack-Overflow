@@ -7,6 +7,7 @@ import { required, nonEmpty, matches, length, isTrimmed } from '../validators';
 import './registration-form.css';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
+import emoji from 'emoji-dictionary';
 
 const passwordLength = length({ min: 4, max: 72 });
 const matchesPassword = matches('password');
@@ -28,11 +29,15 @@ export class RegistrationForm extends React.Component {
     return (
       <div className="landing">
         <div className="container">
-          <div className="one-half column ">
-            <h1>Create your account</h1>
-            <p>It's free and only takes a minute.</p>
+          <div className="one-half column center">
+            <span id="center">
+              <h1>Create your account</h1>
+              <p>
+                It's free and only takes a minute. {emoji.getUnicode('smile')}
+              </p>
+            </span>
           </div>
-          <div className="one-half column">
+          <div className="one-half column ">
             <form
               className="login-form"
               onSubmit={this.props.handleSubmit(values =>

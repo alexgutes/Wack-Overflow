@@ -1,0 +1,9 @@
+.column {
+  margin-top: 50px;
+}
+
+.border {
+  background-color: #fafafb;
+  border: #e4e6e8 1px solid;
+  padding: 16px 15px;
+}

@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import { connect } from 'react-redux';
 
 import './App.css';
@@ -7,7 +6,6 @@ import './css/skeleton.css';
 import Header from './components/header';
 import AskQuestion from './components/ask-question';
 import Questions from './components/questions';
-import LoginForm from './components/login-form';
 import RegistrationForm from './components/registration-form';
 import { refreshAuthToken } from './actions/auth';
 import Home from './components/home';

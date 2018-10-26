@@ -1,11 +1,12 @@
-.container.login-form-container {
-  max-width: 330px;
-  align-items: center;
+.header.container {
+  height: 50px;
+}
+
+.outer-div {
+  padding: 30px;
 }
 
 .login-form-container {
-  padding-top: 100px;
-  box-sizing: border-box;
-  align-items: center;
-  justify-content: center;
+  margin: 0 auto;
+  max-width: 330px;
 }

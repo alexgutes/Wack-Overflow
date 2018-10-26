@@ -58,7 +58,6 @@ export const postQuestionError = error => {
 };
 
 export const postQuestion = (title, content) => (dispatch, getState) => {
-  console.log(title, content);
   dispatch(postQuestionRequest());
   const authToken = getState().auth.authToken;
 
