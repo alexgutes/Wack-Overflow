@@ -1,38 +1,36 @@
-# User Stories
+# Wack Overflow
 
-## upon first loading, (not logged in) user sees
+### by Alex Gutierrez
 
-- header with search bar, log in and sign up buttons
-- registration form main focus
-- list of all questions (number of answers, tags, user)
-- nav bar on right with Home, Tags, Users
+https://wackoverflow.herokuapp.com/
 
-## if logged in
+# About
 
-- log in and register buttons are not visible
-- log out button is visible
-- top questions move up to primary focus
-- ask question button
+Wack Overflow is a barebones clone of popular programming question and answer site Stack Overflow. A registred user has the ability to post a question related to programming which all visitors the site are able to view.
 
-## ask question page
+# How to use
 
-- form with fields title, body, tags
-- 'post your question' button
+To login, you can either create a new account or use the following account:
 
-## view single question
+- Username: msgreen
+- Password: password
 
-- question title, body
-- list of answers
-- post answer form
+# Technology Stack
 
-## header component
+Front End:
 
-- login
-- sign up
+- React
+- Redux
+- Redux Form
 
-if current user logged in show logout button
-else show Log In and Sign up buttons
+Back End:
 
-ask questions pages
-if logged in show ask question form
-else show log in and/or register form
+- Node
+- Express
+- Passport
+- MongoDB
+- Mongoose
+
+The client and server are hosted on Herkoku and the database is hosted on MLab.
+
+# Screenshots
