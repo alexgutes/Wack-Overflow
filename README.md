@@ -31,6 +31,8 @@ Back End:
 - MongoDB
 - Mongoose
 
-The client and server are hosted on Herkoku and the database is hosted on MLab.
+The client and server are hosted on Heroku and the database is hosted on MLab.
 
 # Screenshots
+
+![Alt text](/alex-full-stack-project-client/screenshots/1.png)
