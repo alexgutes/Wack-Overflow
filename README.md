@@ -36,4 +36,4 @@ Link to sever repo https://github.com/thinkful-ei24/alex-full-stack-project-serv
 
 # Screenshots
 
-https://raw.githubusercontent.com/thinkful-ei24/alex-full-stack-project-client/master/screenshots/1.png
+!(https://raw.githubusercontent.com/thinkful-ei24/alex-full-stack-project-client/master/screenshots/1.png)
