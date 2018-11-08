@@ -33,3 +33,9 @@
   float: right;
   text-align: right;
 }
+
+@media screen and (max-width: 400px) {
+  #header-logo {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,14 @@
+.content {
+  padding-top: 30px;
+}
+
+.question-header {
+  border-bottom: 1px solid #eff0f1;
+}
+.answer {
+  border-bottom: 1px solid #eff0f1;
+}
+
+.answer-header {
+  border-bottom: 1px solid #eff0f1;
+}

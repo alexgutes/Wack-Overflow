@@ -1,5 +1,5 @@
 import { reduxForm, Field } from 'redux-form';
-import { postQuestion, fetchQuestions } from '../actions/question';
+import { postQuestion } from '../actions/question';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './ask-question.css';
@@ -12,7 +12,7 @@ export class AskQuestion extends React.Component {
     // pass values and token?
     return this.props
       .dispatch(postQuestion(values.title, values.body))
-      .then(() => this.props.dispatch(fetchQuestions()));
+      .then(() => (window.location = '/'));
   }
   render() {
     // const currentUser = this.props.currentUser.username;
@@ -28,7 +28,6 @@ export class AskQuestion extends React.Component {
           <form
             onSubmit={this.props.handleSubmit(values => {
               this.onSubmit(values);
-              window.location = '/';
             })}
           >
             <label>Title</label>
@@ -59,11 +58,9 @@ export class AskQuestion extends React.Component {
             <h5>How To Ask</h5>
             <p>
               <b>Is your question about programming?</b>
-              <p>
-                We prefer questions that can be answered, not just discussed.
-              </p>
-              <p>Provide details. Share your research.</p>
             </p>
+            <p>We prefer questions that can be answered, not just discussed.</p>
+            <p>Provide details. Share your research.</p>
           </div>
         </div>
       </div>

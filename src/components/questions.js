@@ -27,7 +27,7 @@ export class Questions extends Component {
         </ul>
 
         <div className="question-list">
-          <ul>{this.props.questions.reverse()}</ul>
+          <ul>{this.props.questions}</ul>
         </div>
       </div>
     );
@@ -39,7 +39,9 @@ const mapStateToProps = state => {
     return (
       <li key={index} className="question">
         <div className="row">
-          <h5>{question.title}</h5>
+          <Link to={'/questions/' + question._id}>
+            <h5>{question.title}</h5>
+          </Link>
         </div>
         <p>{question.content}</p>
         <div className="row asked-by">

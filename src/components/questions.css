@@ -44,3 +44,8 @@ a {
 .question {
   border-bottom: 1px solid #eff0f1;
 }
+
+#ask {
+  border-width: 3px;
+  border-color: orange;
+}

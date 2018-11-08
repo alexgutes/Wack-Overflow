@@ -7,7 +7,6 @@ import { required, nonEmpty, matches, length, isTrimmed } from '../validators';
 import './registration-form.css';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import emoji from 'emoji-dictionary';
 
 const passwordLength = length({ min: 4, max: 72 });
 const matchesPassword = matches('password');
@@ -31,9 +30,15 @@ export class RegistrationForm extends React.Component {
         <div className="container">
           <div className="one-half column center">
             <span id="center">
-              <h1>Create your account</h1>
+              <h1>Welcome</h1>
+              <p>Please create an account.</p>
               <p>
-                It's free and only takes a minute. {emoji.getUnicode('smile')}
+                After registering you will be able to ask a question to be
+                answered by our knowledgeable programming community.
+              </p>
+              <p>
+                You may also view questions that others have already asked, have
+                a look!
               </p>
             </span>
           </div>

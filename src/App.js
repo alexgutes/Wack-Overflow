@@ -7,6 +7,7 @@ import Header from './components/header';
 import AskQuestion from './components/ask-question';
 import Questions from './components/questions';
 import RegistrationForm from './components/registration-form';
+import ShowQuestion from './components/show-question';
 import { refreshAuthToken } from './actions/auth';
 import Home from './components/home';
 import { Route, withRouter } from 'react-router-dom';
@@ -49,6 +50,8 @@ export class App extends React.Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/ask" component={AskQuestion} />
           <Route exact path="/questions" component={Questions} />
+          <Route exact path="/questions/:id" component={ShowQuestion} />
+
           <Route exact path="/login" component={LoginPage} />
           <Route exact path="/register" component={RegistrationForm} />
         </main>
