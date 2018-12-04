@@ -6,7 +6,7 @@ https://wackoverflow.herokuapp.com/
 
 # About
 
-Wack Overflow is a barebones clone of popular programming question and answer site Stack Overflow. A registred user has the ability to post a question related to programming which all visitors the site are able to view.
+Wack Overflow is a barebones clone of popular programming question and answer site Stack Overflow. A registred user has the ability to post a question related to programming which all visitors to the site are able to view.
 
 # How to use
 
