@@ -1,8 +1,8 @@
 # Wack Overflow
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a12742ad-cae6-49e7-811d-44eb13de8b1c/deploy-status)](https://app.netlify.com/sites/wackoverflow/deploys)
 
-### by Alex Gutierrez
+wackoverflow.netlify.com
 
-https://wackoverflow.herokuapp.com/
 
 # About
 
