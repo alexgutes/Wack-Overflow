@@ -1,17 +1,17 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React from "react";
+import { connect } from "react-redux";
 
-import './App.css';
-import './css/skeleton.css';
-import Header from './components/header';
-import AskQuestion from './components/ask-question';
-import Questions from './components/questions';
-import RegistrationForm from './components/registration-form';
-import ShowQuestion from './components/show-question';
-import { refreshAuthToken } from './actions/auth';
-import Home from './components/home';
-import { Route, withRouter } from 'react-router-dom';
-import LoginPage from './components/login-page';
+import "./App.css";
+import "./css/skeleton.css";
+import Header from "./components/header";
+import AskQuestion from "./components/ask-question";
+import Questions from "./components/questions";
+import RegistrationForm from "./components/registration-form";
+import ShowQuestion from "./components/show-question";
+import { refreshAuthToken } from "./actions/auth";
+import Home from "./components/home";
+import { Route, withRouter } from "react-router-dom";
+import LoginPage from "./components/login-page";
 
 export class App extends React.Component {
   componentDidUpdate(prevProps) {
