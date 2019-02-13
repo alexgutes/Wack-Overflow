@@ -3,23 +3,19 @@
   <br/>
   <span><b>Wack Overflow</b></span>: A Stack Overflow clone built with React and Node
   <br/>
-  <a src='https://wackoverflow.netlify.com'>https://wackoverflow.netlify.com</a>
-<p align='center'>
-
-  [![Netlify Status](https://api.netlify.com/api/v1/badges/a12742ad-cae6-49e7-811d-44eb13de8b1c/deploy-status)](https://app.netlify.com/sites/wackoverflow/deploys)
-
+  <a href='https://wackoverflow.netlify.com'>https://wackoverflow.netlify.com</a>
+  <br/>
+  <a href='https://app.netlify.com/sites/wackoverflow/deploys'>
+  <img  src='https://api.netlify.com/api/v1/badges/a12742ad-cae6-49e7-811d-44eb13de8b1c/deploy-status'>
+</a>
 </p>
-</p>
 
-
-
-
-
+![wackoverflow-screenshot](https://user-images.githubusercontent.com/34469795/52743964-88502900-2f98-11e9-8e2c-25851a3d8961.jpg)
 
 
 # About
 
-Wack Overflow is a barebones clone of popular programming question and answer site Stack Overflow. A registred user has the ability to post a question related to programming which all visitors to the site are able to view.
+Wack Overflow is a barebones clone of popular programming question and answer site Stack Overflow. Registered users can post programming related questions for all to view and also answer existing questions.
 
 # How to use
 
@@ -28,25 +24,22 @@ To login, you can either create a new account or use the following account:
 - Username: msgreen
 - Password: password
 
-# Technology Stack
-
+# Tech Stack
 Front End:
-
-- React
-- Redux
-- Redux Form
+- [Create React App](https://github.com/facebook/create-react-app)
+- [React](https://github.com/facebook/react)
+- [Redux](https://github.com/reduxjs/redux)
+- [Redux Form](https://github.com/erikras/redux-form)
+- ~~Heroku~~ [Netlify](https://www.netlify.com/)
 
 Back End:
 
-- Node
-- Express
-- Passport
-- MongoDB
-- Mongoose
+- [Node](https://github.com/nodejs/node)
+- [Express](https://github.com/expressjs/express)
+- [Passport](https://github.com/jaredhanson/passport)
+- [MongoDB](https://github.com/mongodb/mongo)
+- [Mongoose](https://github.com/Automattic/mongoose/)
+- [Heroku](https://www.heroku.com/home)
+- ~~Mlab~~ [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
 
-The client and server are hosted on Heroku and the database is hosted on MLab.
-Link to sever repo https://github.com/thinkful-ei24/alex-full-stack-project-server
-
-# Screenshots
-
-![alt](https://raw.githubusercontent.com/thinkful-ei24/alex-full-stack-project-client/master/screenshots/1.png)
+View the server repo [here.](https://github.com/thinkful-ei24/alex-full-stack-project-server)
