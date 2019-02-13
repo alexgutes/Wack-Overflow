@@ -3,9 +3,12 @@
   <br/>
   <span><b>Wack Overflow</b></span>: A Stack Overflow clone built with React and Node
   <br/>
-  <a>https://wackoverflow.netlify.com</a>
+  <a src='https://wackoverflow.netlify.com'>https://wackoverflow.netlify.com</a>
+<p align='center'>
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/a12742ad-cae6-49e7-811d-44eb13de8b1c/deploy-status)](https://app.netlify.com/sites/wackoverflow/deploys)
+  [![Netlify Status](https://api.netlify.com/api/v1/badges/a12742ad-cae6-49e7-811d-44eb13de8b1c/deploy-status)](https://app.netlify.com/sites/wackoverflow/deploys)
+
+</p>
 </p>
 
 
