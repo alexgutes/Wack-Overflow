@@ -1,7 +1,16 @@
 # Wack Overflow
+
+<p align='center'>
+  <img src="https://user-images.githubusercontent.com/34469795/52679918-e971f100-2ef3-11e9-997b-69423c6f9cce.png" height="100" />
+  <br/>
+  https://wackoverflow.netlify.com
+  </p>
+
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/a12742ad-cae6-49e7-811d-44eb13de8b1c/deploy-status)](https://app.netlify.com/sites/wackoverflow/deploys)
 
-https://wackoverflow.netlify.com
+
+
 
 
 # About
