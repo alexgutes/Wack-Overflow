@@ -1,12 +1,12 @@
 import { reduxForm, Field } from 'redux-form';
-import { postQuestion } from '../actions/question';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import './ask-question.css';
+import './styles/ask-question.css';
 
 import React from 'react';
+import { postQuestion } from '../actions/question';
 
-//TODO: Convert to redux with action/reducer
+// TODO: Convert to redux with action/reducer
 export class AskQuestion extends React.Component {
   onSubmit(values) {
     // pass values and token?
@@ -14,6 +14,7 @@ export class AskQuestion extends React.Component {
       .dispatch(postQuestion(values.title, values.body))
       .then(() => (window.location = '/'));
   }
+
   render() {
     // const currentUser = this.props.currentUser.username;
     // const { handleSubmit } = this.props;
@@ -68,12 +69,10 @@ export class AskQuestion extends React.Component {
   }
 }
 
-const AskQuestionConnected = connect(state => {
-  return {
-    currentUser: state.auth.currentUser
-  };
-})(AskQuestion);
+const AskQuestionConnected = connect(state => ({
+  currentUser: state.auth.currentUser,
+}))(AskQuestion);
 
 export default reduxForm({
-  form: 'askQuestion'
+  form: 'askQuestion',
 })(AskQuestionConnected);

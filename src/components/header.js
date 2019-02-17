@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { clearAuth } from '../actions/auth';
-import './header.css';
+import './styles/header.css';
 
 export function Header(props) {
   let show;
@@ -10,9 +10,9 @@ export function Header(props) {
     show = (
       <li>
         <button
-          onClick={e => {
+          type="button"
+          onClick={() => {
             props.dispatch(clearAuth());
-            window.location = '/';
           }}
         >
           Logout
@@ -21,16 +21,18 @@ export function Header(props) {
     );
   } else {
     show = (
-      //add listner to sign up
+      // add listner to sign up
       <React.Fragment>
         <li>
           <Link className="top-btn" to="/login">
-            <button>Log In</button>
+            <button type="button">Log In</button>
           </Link>
         </li>
         <li>
           <Link to="/register">
-            <button className="top-btn button-primary">Sign Up</button>
+            <button type="button" className="top-btn button-primary">
+              Sign Up
+            </button>
           </Link>
         </li>
       </React.Fragment>
@@ -56,7 +58,7 @@ export function Header(props) {
 }
 
 const mapStateToProps = state => ({
-  currentUser: state.auth.currentUser
+  currentUser: state.auth.currentUser,
 });
 
 export default connect(mapStateToProps)(Header);

@@ -2,9 +2,9 @@ import React from 'react';
 import { Field, reduxForm, focus } from 'redux-form';
 import { registerUser } from '../actions/users';
 import { login } from '../actions/auth';
-import Input from './input';
+import Input from './Input';
 import { required, nonEmpty, matches, length, isTrimmed } from '../validators';
-import './registration-form.css';
+import './styles/registration-form.css';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -40,6 +40,15 @@ export class RegistrationForm extends React.Component {
                 You may also view questions that others have already asked, have
                 a look!
               </p>
+              <button
+                type="submit"
+                className="orange-btn"
+                onClick={() =>
+                  this.props.dispatch(login('msgreen', 'password'))
+                }
+              >
+                Demo
+              </button>
             </span>
           </div>
           <div className="one-half column ">
@@ -95,14 +104,12 @@ export class RegistrationForm extends React.Component {
   }
 }
 
-const RegistrationFormConnected = connect(state => {
-  return {
-    currentUser: state.auth.currentUser
-  };
-})(RegistrationForm);
+const RegistrationFormConnected = connect(state => ({
+  currentUser: state.auth.currentUser,
+}))(RegistrationForm);
 
 export default reduxForm({
   form: 'registration',
   onSubmitFail: (errors, dispatch) =>
-    dispatch(focus('registration', Object.keys(errors)[0]))
+    dispatch(focus('registration', Object.keys(errors)[0])),
 })(RegistrationFormConnected);

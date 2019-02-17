@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import RegistrationForm from './registration-form';
 import { connect } from 'react-redux';
-import Questions from '../components/questions';
+import RegistrationForm from './RegistrationForm';
+import Questions from './Questions';
 
 class Home extends Component {
   render() {
@@ -19,7 +19,7 @@ class Home extends Component {
 }
 
 const mapStateToProps = state => ({
-  currentUser: state.auth.currentUser
+  currentUser: state.auth.currentUser,
 });
 
 export default connect(mapStateToProps)(Home);

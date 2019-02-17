@@ -1,17 +1,16 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
 
-import "./App.css";
-import "./css/skeleton.css";
-import Header from "./components/header";
-import AskQuestion from "./components/ask-question";
-import Questions from "./components/questions";
-import RegistrationForm from "./components/registration-form";
-import ShowQuestion from "./components/show-question";
-import { refreshAuthToken } from "./actions/auth";
-import Home from "./components/home";
-import { Route, withRouter } from "react-router-dom";
-import LoginPage from "./components/login-page";
+import './css/skeleton.css';
+import { Route, withRouter } from 'react-router-dom';
+import Header from './components/Header';
+import AskQuestion from './components/AskQuestion';
+import Questions from './components/Questions';
+import RegistrationForm from './components/RegistrationForm';
+import ShowQuestion from './components/ShowQuestion';
+import { refreshAuthToken } from './actions/auth';
+import Home from './components/Home';
+import LoginPage from './components/LoginPage';
 
 export class App extends React.Component {
   componentDidUpdate(prevProps) {
@@ -42,6 +41,7 @@ export class App extends React.Component {
 
     clearInterval(this.refreshInterval);
   }
+
   render() {
     return (
       <div className="App">
@@ -61,7 +61,7 @@ export class App extends React.Component {
 }
 const mapStateToProps = state => ({
   hasAuthToken: state.auth.authToken !== null,
-  loggedIn: state.auth.currentUser !== null
+  loggedIn: state.auth.currentUser !== null,
 });
 
 export default withRouter(connect(mapStateToProps)(App));

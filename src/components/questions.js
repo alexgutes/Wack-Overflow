@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchQuestions } from '../actions/question';
 import { Link } from 'react-router-dom';
-import './questions.css';
+import './styles/questions.css';
 import moment from 'moment';
+import { fetchQuestions } from '../actions/question';
 
 export class Questions extends Component {
   componentDidMount() {
@@ -35,26 +35,24 @@ export class Questions extends Component {
 }
 
 const mapStateToProps = state => {
-  const questionList = state.questions.questions.map((question, index) => {
-    return (
-      <li key={index} className="question">
-        <div className="row">
-          <Link to={'/questions/' + question._id}>
-            <h5>{question.title}</h5>
-          </Link>
-        </div>
-        <p>{question.content}</p>
-        <div className="row asked-by">
-          <p>
-            <span id="asked">asked {moment(question.createdAt).fromNow()}</span>
-            <span className="link-color"> {question.userId.username}</span>
-          </p>
-        </div>
-      </li>
-    );
-  });
+  const questionList = state.questions.questions.map((question, index) => (
+    <li key={index} className="question">
+      <div className="row">
+        <Link to={'/questions/' + question._id}>
+          <h5>{question.title}</h5>
+        </Link>
+      </div>
+      <p>{question.content}</p>
+      <div className="row asked-by">
+        <p>
+          <span id="asked">asked {moment(question.createdAt).fromNow()}</span>
+          <span className="link-color"> {question.userId.username}</span>
+        </p>
+      </div>
+    </li>
+  ));
   return {
-    questions: questionList
+    questions: questionList,
   };
 };
 

@@ -1,12 +1,12 @@
 import React from 'react';
 import { Field, reduxForm, focus } from 'redux-form';
-import Input from './input';
-import { login } from '../actions/auth';
-import { required, nonEmpty } from '../validators';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import './login-form.css';
 import emoji from 'emoji-dictionary';
+import Input from './Input';
+import { login } from '../actions/auth';
+import { required, nonEmpty } from '../validators';
+import './styles/login-form.css';
 
 class LoginForm extends React.Component {
   onSubmit(values) {
@@ -33,10 +33,10 @@ class LoginForm extends React.Component {
           <span className="emoji u-pull-right">{emoji.getUnicode('lock')}</span>
           <form
             className="login-form"
-            onSubmit={this.props.handleSubmit(values => {
-              return this.onSubmit(values);
+            onSubmit={this.props.handleSubmit(
+              values => this.onSubmit(values)
               // window.location = '/';
-            })}
+            )}
           >
             {error}
             <label htmlFor="username">Username</label>
@@ -68,13 +68,11 @@ class LoginForm extends React.Component {
   }
 }
 
-const LoginFormConnected = connect(state => {
-  return {
-    currentUser: state.auth.currentUser
-  };
-})(LoginForm);
+const LoginFormConnected = connect(state => ({
+  currentUser: state.auth.currentUser,
+}))(LoginForm);
 
 export default reduxForm({
   form: 'login',
-  onSubmitFail: (errors, dispatch) => dispatch(focus('login', 'username'))
+  onSubmitFail: (errors, dispatch) => dispatch(focus('login', 'username')),
 })(LoginFormConnected);
