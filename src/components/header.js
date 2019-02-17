@@ -8,7 +8,7 @@ export function Header(props) {
   let show;
   if (props.currentUser) {
     show = (
-      <li>
+      <li className="logout">
         <button
           type="button"
           onClick={() => {
@@ -46,7 +46,7 @@ export function Header(props) {
             <Link id="home-link" to="/">
               <span id="header-logo">
                 wack
-                <b>overflow</b>
+                <span className="heavy">overflow</span>
               </span>
             </Link>
           </li>

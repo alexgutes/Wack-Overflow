@@ -1,12 +1,12 @@
 import React from 'react';
 import { Field, reduxForm, focus } from 'redux-form';
-import { registerUser } from '../actions/users';
-import { login } from '../actions/auth';
-import Input from './Input';
-import { required, nonEmpty, matches, length, isTrimmed } from '../validators';
-import './styles/registration-form.css';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { registerUser } from '../actions/users';
+import { login } from '../actions/auth';
+import { required, nonEmpty, matches, length, isTrimmed } from '../validators';
+import './styles/registration-form.css';
+import Input from './Input';
 
 const passwordLength = length({ min: 4, max: 72 });
 const matchesPassword = matches('password');
@@ -40,14 +40,15 @@ export class RegistrationForm extends React.Component {
                 You may also view questions that others have already asked, have
                 a look!
               </p>
+              <p>Alternatively, you can login with a demo account.</p>
               <button
                 type="submit"
-                className="orange-btn"
+                className="button-primary orange-btn"
                 onClick={() =>
                   this.props.dispatch(login('msgreen', 'password'))
                 }
               >
-                Demo
+                Demo Login
               </button>
             </span>
           </div>
@@ -89,8 +90,7 @@ export class RegistrationForm extends React.Component {
                 validate={[required, nonEmpty, matchesPassword]}
               />
               <button
-                className="button-primary"
-                id="border"
+                className="button-primary btn-border"
                 type="submit"
                 disabled={this.props.pristine || this.props.submitting}
               >

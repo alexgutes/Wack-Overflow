@@ -69,7 +69,7 @@ export class ShowQuestion extends Component {
 }
 
 const mapStateToProps = state => ({
-  question: state.questions.question
+  question: state.questions.question,
 });
 ShowQuestion = connect(mapStateToProps)(ShowQuestion);
 export default reduxForm({

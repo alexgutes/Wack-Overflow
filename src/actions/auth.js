@@ -8,29 +8,29 @@ import { saveAuthToken, clearAuthToken } from '../local-storage';
 export const SET_AUTH_TOKEN = 'SET_AUTH_TOKEN';
 export const setAuthToken = authToken => ({
   type: SET_AUTH_TOKEN,
-  authToken
+  authToken,
 });
 
 export const CLEAR_AUTH = 'CLEAR_AUTH';
 export const clearAuth = () => ({
-  type: CLEAR_AUTH
+  type: CLEAR_AUTH,
 });
 
 export const AUTH_REQUEST = 'AUTH_REQUEST';
 export const authRequest = () => ({
-  type: AUTH_REQUEST
+  type: AUTH_REQUEST,
 });
 
 export const AUTH_SUCCESS = 'AUTH_SUCCESS';
 export const authSuccess = currentUser => ({
   type: AUTH_SUCCESS,
-  currentUser
+  currentUser,
 });
 
 export const AUTH_ERROR = 'AUTH_ERROR';
 export const authError = error => ({
   type: AUTH_ERROR,
-  error
+  error,
 });
 
 // Stores the auth token in state and localStorage, and decodes and stores
@@ -48,12 +48,12 @@ export const login = (username, password) => dispatch => {
     fetch(`${API_BASE_URL}/auth/login`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         username,
-        password
-      })
+        password,
+      }),
     })
       // Reject any requests which don't return a 200 status, creating
       // errors which follow a consistent format
@@ -71,7 +71,7 @@ export const login = (username, password) => dispatch => {
         // Form
         return Promise.reject(
           new SubmissionError({
-            _error: message
+            _error: message,
           })
         );
       })
@@ -85,8 +85,8 @@ export const refreshAuthToken = () => (dispatch, getState) => {
     method: 'POST',
     headers: {
       // Provide our existing token as credentials to get a new one
-      Authorization: `Bearer ${authToken}`
-    }
+      Authorization: `Bearer ${authToken}`,
+    },
   })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())

@@ -19,7 +19,7 @@ export class Questions extends Component {
           </li>
           <li>
             <Link className="u-pull-right" id="ask-button" to="/ask">
-              <button className="button-primary" id="ask">
+              <button type="button" className="button-primary ask">
                 Ask
               </button>
             </Link>
@@ -38,7 +38,7 @@ const mapStateToProps = state => {
   const questionList = state.questions.questions.map((question, index) => (
     <li key={index} className="question">
       <div className="row">
-        <Link to={'/questions/' + question._id}>
+        <Link to={`/questions/${question._id}`}>
           <h5>{question.title}</h5>
         </Link>
       </div>
