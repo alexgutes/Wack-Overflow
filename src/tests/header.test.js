@@ -1,9 +1,9 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import { Provider } from "react-redux";
-import configureMockStore from "redux-mock-store";
+import { Provider } from 'react-redux';
+import configureMockStore from 'redux-mock-store';
 
-import Header from '../components/header';
+import Header from '../components/Header';
 
 const mockStore = configureMockStore();
 const store = mockStore({});
